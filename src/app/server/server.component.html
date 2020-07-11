@@ -1,1 +1,8 @@
-<p>{{ 'Server'}} with ID {{ serverId }} is {{ getServerStatus() }}</p>
+<!-- The square brackets indicate that we want to bind to some property on this directive
+     and this property name happens to also be ngStyle 
+     SUPER Important to understand that property binding is not the same as a directive. DIFFERENT!
+
+     [ngStyle] -> we are binding to a property of the directive
+    -->
+<p [ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: serverStatus === 'online'}">{{ 'Server'}} with ID {{ serverId }} is {{ getServerStatus() }}</p>
